@@ -4,25 +4,35 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
+import eu.tutorials.dicegame.databinding.FragmentDiceBinding
+import eu.tutorials.dicegame.model.DiceViewModel
 
 class DiceFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = DiceFragment()
-    }
-
-    private lateinit var viewModel: DiceViewModel
+    private val diceViewModel: DiceViewModel by viewModels()
+    private lateinit var binding: FragmentDiceBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.dice_fragment, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_dice, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DiceViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.apply {
+            lifecycleOwner = viewLifecycleOwner
+            diceFragment = this@DiceFragment
+            viewModel = diceViewModel
+        }
+
     }
 
+    fun rollDice() {
+        Toast.makeText(context, "Rolled", Toast.LENGTH_SHORT).show()
+    }
 }

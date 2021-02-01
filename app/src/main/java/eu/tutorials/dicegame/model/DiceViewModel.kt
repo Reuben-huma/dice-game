@@ -1,4 +1,4 @@
-package eu.tutorials.dicegame
+package eu.tutorials.dicegame.model
 
 import androidx.lifecycle.ViewModel
 
