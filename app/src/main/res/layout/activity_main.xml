@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/dice_fragment"
+        android:id="@+id/fragment_container_view"
         android:name="eu.tutorials.dicegame.DiceFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
