@@ -3,8 +3,10 @@ package eu.tutorials.dicegame
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ShareCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -38,9 +40,26 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.results_item -> Toast.makeText(this, "Results", Toast.LENGTH_SHORT).show()
-            R.id.share_item -> Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show()
+            R.id.share_item -> share()
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun share() {
+        val contextView = findViewById<View>(R.id.context_view)
+
+        val shareIntent = ShareCompat.IntentBuilder.from(this)
+            .setSubject(getString(R.string.share_subject))
+            .setText(getString(R.string.share_text))
+            .setType("text/plain")
+            .intent
+
+        try {
+            startActivity(shareIntent)
+        }
+        catch (ex: Exception) {
+            Snackbar.make(contextView, "Error, Please try again!", Snackbar.LENGTH_SHORT).show()
+        }
     }
 }
