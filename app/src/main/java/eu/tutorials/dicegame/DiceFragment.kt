@@ -12,7 +12,7 @@ import eu.tutorials.dicegame.model.DiceViewModel
 
 class DiceFragment : Fragment() {
 
-    private val diceViewModel: DiceViewModel by viewModels()
+    private val viewModel: DiceViewModel by viewModels()
     private lateinit var binding: FragmentDiceBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -26,11 +26,11 @@ class DiceFragment : Fragment() {
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
             diceFragment = this@DiceFragment
-            viewModel = diceViewModel
+            diceViewModel = viewModel
         }
     }
 
     fun onRoll() {
-        diceViewModel.setDiceSide()
+        viewModel.setDiceSide()
     }
 }

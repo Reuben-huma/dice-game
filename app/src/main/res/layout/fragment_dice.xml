@@ -9,7 +9,7 @@
             name="diceFragment"
             type="eu.tutorials.dicegame.DiceFragment" />
         <variable
-            name="viewModel"
+            name="diceViewModel"
             type="eu.tutorials.dicegame.model.DiceViewModel" />
     </data>
 
@@ -22,23 +22,14 @@
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:importantForAccessibility="no"
-            app:imageResource="@{viewModel.side}"
+            android:onClick="@{() -> diceFragment.onRoll()}"
+            app:imageResource="@{diceViewModel.side}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@drawable/dice_1" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/roll"
-            android:onClick="@{() -> diceFragment.onRoll()}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
