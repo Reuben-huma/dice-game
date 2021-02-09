@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.google.android.material.snackbar.Snackbar
 import eu.tutorials.dicegame.databinding.FragmentDiceBinding
 import eu.tutorials.dicegame.model.DiceViewModel
 
@@ -31,6 +32,9 @@ class DiceFragment : Fragment() {
     }
 
     fun onRoll() {
-        viewModel.setDiceSide()
+        if(!viewModel.canDiceRoll()) {
+            val contextView = activity?.findViewById<View>(R.id.context_view)
+            Snackbar.make(contextView!!, " Game complete", Snackbar.LENGTH_SHORT).show()
+        }
     }
 }

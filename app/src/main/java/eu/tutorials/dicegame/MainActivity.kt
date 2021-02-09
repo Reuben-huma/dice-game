@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
 import androidx.navigation.NavController
@@ -39,7 +38,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            R.id.results_item -> Toast.makeText(this, "Results", Toast.LENGTH_SHORT).show()
+            R.id.results_item -> navController.navigate(R.id.action_diceFragment_to_resultsFragment)
             R.id.share_item -> share()
         }
 

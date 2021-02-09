@@ -10,5 +10,20 @@
         android:id="@+id/diceFragment"
         android:name="eu.tutorials.dicegame.DiceFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_dice" />
+        tools:layout="@layout/fragment_dice" >
+        <action
+            android:id="@+id/action_diceFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultsFragment"
+        android:name="eu.tutorials.dicegame.ResultsFragment"
+        android:label="Results"
+        tools:layout="@layout/fragment_results" >
+        <action
+            android:id="@+id/action_resultsFragment_to_diceFragment"
+            app:destination="@id/diceFragment"
+            app:popUpTo="@id/diceFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
