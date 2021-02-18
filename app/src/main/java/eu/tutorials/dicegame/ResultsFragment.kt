@@ -21,7 +21,6 @@ class ResultsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         Log.d("DiceFragment", "onCreateView()")
-
         binding = FragmentResultsBinding.inflate(layoutInflater, container, false)
         return binding?.root
     }

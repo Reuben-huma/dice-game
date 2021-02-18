@@ -5,4 +5,6 @@
     <string name="results">Results</string>
     <string name="share_subject">Dice results</string>
     <string name="share_text">You have scored a 6 out of 10.</string>
+    <string name="try_again">Try again</string>
+    <string name="next">Continue</string>
 </resources>

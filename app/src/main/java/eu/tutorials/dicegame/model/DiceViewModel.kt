@@ -15,11 +15,6 @@ class DiceViewModel : ViewModel() {
     private var _side = MutableLiveData<Int>()
     val side: LiveData<Int> get() = _side
 
-    /*
-        private var _game = MutableLiveData(Game())
-        val game: LiveData<Game> get() = _game
-    */
-
     private var _games = MutableLiveData<List<Game>>(listOf())
     val games: LiveData<List<Game>> get() = _games
 
@@ -71,6 +66,4 @@ class DiceViewModel : ViewModel() {
             return false
         }
     }
-
-
 }
