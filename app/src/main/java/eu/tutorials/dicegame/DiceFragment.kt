@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import eu.tutorials.dicegame.databinding.FragmentDiceBinding
@@ -14,7 +14,7 @@ import eu.tutorials.dicegame.model.DiceViewModel
 
 class DiceFragment : Fragment() {
 
-    private val viewModel: DiceViewModel by viewModels()
+    private val viewModel: DiceViewModel by activityViewModels()
     private lateinit var binding: FragmentDiceBinding
 
     override fun onCreateView(

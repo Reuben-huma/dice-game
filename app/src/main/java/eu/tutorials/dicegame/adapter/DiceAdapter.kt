@@ -9,7 +9,14 @@ import androidx.recyclerview.widget.RecyclerView
 import eu.tutorials.dicegame.R
 import eu.tutorials.dicegame.model.Game
 
-class DiceAdapter(private val games: List<Game>) : RecyclerView.Adapter<DiceViewHolder>() {
+class DiceAdapter : RecyclerView.Adapter<DiceViewHolder>() {
+
+    var games = listOf<Game>()
+        set(value) {
+        field = value
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiceViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
         return DiceViewHolder(view)

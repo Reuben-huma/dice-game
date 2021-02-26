@@ -13,10 +13,10 @@ class DiceViewModel : ViewModel() {
     private var score = 0
 
     private var _side = MutableLiveData<Int>()
-    val side: LiveData<Int> get() = _side
+    val side: LiveData<Int> = _side
 
-    private var _games = MutableLiveData<List<Game>>(listOf())
-    val games: LiveData<List<Game>> get() = _games
+    private var _games = MutableLiveData<MutableList<Game>>(mutableListOf())
+    val games: LiveData<MutableList<Game>> = _games
 
     init {
         reset()
@@ -56,12 +56,7 @@ class DiceViewModel : ViewModel() {
             return true
         }
         else {
-
-            _games.value = listOf(
-                Game(side.value.toString(), 1),
-                Game("Second", 2),
-                Game("Third", 3)
-            )
+            _games.value?.add(Game(date = date, score = score))
             reset()
             return false
         }
