@@ -49,9 +49,6 @@ class DiceFragment : Fragment() {
                     findNavController().navigate(R.id.action_diceFragment_to_resultsFragment)
                 }
                 .show()
-
-            //val contextView = activity?.findViewById<View>(R.id.context_view)
-            //Snackbar.make(contextView!!, " Game complete", Snackbar.LENGTH_SHORT).show()
         }
     }
 }
