@@ -5,9 +5,11 @@
     tools:context=".DiceFragment">
 
     <data>
+
         <variable
             name="diceFragment"
             type="eu.tutorials.dicegame.DiceFragment" />
+
         <variable
             name="diceViewModel"
             type="eu.tutorials.dicegame.viewmodel.DiceViewModel" />

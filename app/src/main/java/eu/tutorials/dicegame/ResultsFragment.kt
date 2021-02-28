@@ -37,7 +37,7 @@ class ResultsFragment : Fragment() {
             recyclerView.setHasFixedSize(true)
         }
 
-        viewModel.games.observe(viewLifecycleOwner){
+        viewModel.games.observe(viewLifecycleOwner) {
             adapter.games = it
         }
     }
@@ -48,7 +48,7 @@ class ResultsFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.share_item -> share()
         }
         return super.onOptionsItemSelected(item)
@@ -63,8 +63,7 @@ class ResultsFragment : Fragment() {
 
         try {
             startActivity(shareIntent)
-        }
-        catch (ex: Exception) {
+        } catch (ex: Exception) {
             Snackbar.make(binding!!.root, "Error, Please try again!", Snackbar.LENGTH_SHORT).show()
         }
     }

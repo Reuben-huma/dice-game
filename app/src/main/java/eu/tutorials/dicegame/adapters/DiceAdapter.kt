@@ -13,9 +13,9 @@ class DiceAdapter : RecyclerView.Adapter<DiceViewHolder>() {
 
     var games = listOf<Game>()
         set(value) {
-        field = value
-        notifyDataSetChanged()
-    }
+            field = value
+            notifyDataSetChanged()
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiceViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)

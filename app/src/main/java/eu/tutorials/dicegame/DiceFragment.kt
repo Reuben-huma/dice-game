@@ -17,11 +17,7 @@ class DiceFragment : Fragment() {
     private val viewModel: DiceViewModel by activityViewModels()
     private lateinit var binding: FragmentDiceBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_dice, container, false)
         return binding.root
     }
