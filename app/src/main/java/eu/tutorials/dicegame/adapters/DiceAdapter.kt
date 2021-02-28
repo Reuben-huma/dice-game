@@ -1,4 +1,4 @@
-package eu.tutorials.dicegame.adapter
+package eu.tutorials.dicegame.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import eu.tutorials.dicegame.R
-import eu.tutorials.dicegame.model.Game
+import eu.tutorials.dicegame.data.Game
 
 class DiceAdapter : RecyclerView.Adapter<DiceViewHolder>() {
 

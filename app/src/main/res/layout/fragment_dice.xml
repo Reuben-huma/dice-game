@@ -10,7 +10,7 @@
             type="eu.tutorials.dicegame.DiceFragment" />
         <variable
             name="diceViewModel"
-            type="eu.tutorials.dicegame.model.DiceViewModel" />
+            type="eu.tutorials.dicegame.viewmodel.DiceViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

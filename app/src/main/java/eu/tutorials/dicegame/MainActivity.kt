@@ -1,64 +1,33 @@
 package eu.tutorials.dicegame
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ShareCompat
+import androidx.databinding.DataBindingUtil
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
+import androidx.navigation.ui.NavigationUI
+import eu.tutorials.dicegame.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+    private lateinit var drawerLayout: DrawerLayout
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navHostFragment = supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment
         navController = navHostFragment.navController
-        setupActionBarWithNavController(navController)
+        drawerLayout = binding.drawerLayout
 
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener {
-                view -> Snackbar.make(view, "Tap the dice to roll", Snackbar.LENGTH_SHORT).show()
-        }
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+        NavigationUI.setupWithNavController(binding.navView, navController)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp() || super.onSupportNavigateUp()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.options_menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
-            R.id.results_item -> navController.navigate(R.id.action_diceFragment_to_resultsFragment)
-            R.id.share_item -> share()
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
-
-    private fun share() {
-        val contextView = findViewById<View>(R.id.context_view)
-
-        val shareIntent = ShareCompat.IntentBuilder.from(this)
-            .setSubject(getString(R.string.share_subject))
-            .setText(getString(R.string.share_text))
-            .setType("text/plain")
-            .intent
-
-        try {
-            startActivity(shareIntent)
-        }
-        catch (ex: Exception) {
-            Snackbar.make(contextView, "Error, Please try again!", Snackbar.LENGTH_SHORT).show()
-        }
+        return NavigationUI.navigateUp(navController, drawerLayout) || super.onSupportNavigateUp()
     }
 }

@@ -10,7 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import eu.tutorials.dicegame.databinding.FragmentDiceBinding
-import eu.tutorials.dicegame.model.DiceViewModel
+import eu.tutorials.dicegame.viewmodel.DiceViewModel
 
 class DiceFragment : Fragment() {
 

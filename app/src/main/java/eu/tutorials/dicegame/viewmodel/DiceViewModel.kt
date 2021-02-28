@@ -1,9 +1,10 @@
-package eu.tutorials.dicegame.model
+package eu.tutorials.dicegame.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import eu.tutorials.dicegame.R
+import eu.tutorials.dicegame.data.Game
 import java.text.SimpleDateFormat
 import java.util.*
 
