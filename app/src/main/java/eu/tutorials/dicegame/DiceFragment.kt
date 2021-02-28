@@ -36,8 +36,8 @@ class DiceFragment : Fragment() {
         if (!viewModel.canDiceRoll()) {
 
             MaterialAlertDialogBuilder(requireContext())
-                .setTitle("Dice Game")
-                .setMessage("Congrats. You have completed the Game.\n Would you like to try again?")
+                .setTitle("Congratulations")
+                .setMessage("You have completed the Game. Would you like to continue or play again?")
                 .setCancelable(false)
                 .setNegativeButton(
                     R.string.try_again

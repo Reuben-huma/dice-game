@@ -55,7 +55,8 @@ class DiceViewModel : ViewModel() {
                 score++
             }
             return true
-        } else {
+        }
+        else {
             _games.value?.add(Game(date = date, score = score))
             reset()
             return false

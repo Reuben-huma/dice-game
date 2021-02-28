@@ -1,9 +1,9 @@
 package eu.tutorials.dicegame.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import eu.tutorials.dicegame.R
@@ -19,19 +19,18 @@ class DiceAdapter : RecyclerView.Adapter<DiceViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiceViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
-        return DiceViewHolder(view)
+        return DiceViewHolder(parent.context, view)
     }
 
     override fun onBindViewHolder(holder: DiceViewHolder, position: Int) {
-        holder.item_date.text = games[position].date
-        holder.item_score.text = games[position].score.toString()
+        holder.itemDate.text = games[position].date
+        holder.itemScore.text = holder.context.getString(R.string.score, games[position].score)
     }
 
     override fun getItemCount() = games.size
 }
 
-class DiceViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    val item_image: ImageView = view.findViewById(R.id.item_image)
-    val item_date: TextView = view.findViewById(R.id.item_date)
-    val item_score: TextView = view.findViewById(R.id.item_score)
+class DiceViewHolder(val context: Context, view: View) : RecyclerView.ViewHolder(view) {
+    val itemDate: TextView = view.findViewById(R.id.item_date)
+    val itemScore: TextView = view.findViewById(R.id.item_score)
 }

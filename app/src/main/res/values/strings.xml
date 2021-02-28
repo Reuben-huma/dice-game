@@ -3,9 +3,10 @@
     <string name="roll">roll</string>
     <string name="share">Share</string>
     <string name="results">Results</string>
+    <string name="score">Your scored %d out of 10.</string>
     <string name="share_subject">Dice results</string>
-    <string name="share_text">You have scored a 6 out of 10.</string>
-    <string name="try_again">Try again</string>
+    <string name="share_text">You have scored a %d out of 10. Thank you for playing!</string>
+    <string name="try_again">Play again</string>
     <string name="next">Continue</string>
     <string name="about">About</string>
     <string name="header_title">Dice game</string>
