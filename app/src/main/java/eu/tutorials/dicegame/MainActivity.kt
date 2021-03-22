@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(binding.navView, navController)
 
         // First change
+        // Second change
     }
 
     override fun onSupportNavigateUp(): Boolean {
