@@ -24,10 +24,6 @@ class MainActivity : AppCompatActivity() {
 
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)
-
-        // First change
-        // Second change
-        // Third change
     }
 
     override fun onSupportNavigateUp(): Boolean {
