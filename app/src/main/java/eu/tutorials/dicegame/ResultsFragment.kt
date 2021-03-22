@@ -64,7 +64,7 @@ class ResultsFragment : Fragment() {
         try {
             startActivity(shareIntent)
         } catch (ex: Exception) {
-            Snackbar.make(binding!!.root, "Error, Please try again!", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(binding!!.root, "Error, Please try again!!", Snackbar.LENGTH_SHORT).show()
         }
     }
 }
