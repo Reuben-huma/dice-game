@@ -37,7 +37,7 @@ class DiceFragment : Fragment() {
 
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Congradulations")
-                .setMessage("You have completed the Game. Would you like to continue or play again?")
+                .setMessage("You have completed the Game. Would you like to continue or play again??")
                 .setCancelable(false)
                 .setNegativeButton(
                     R.string.try_again
